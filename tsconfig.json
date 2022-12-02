@@ -21,7 +21,8 @@
       "@config/*": ["config/*"],
       "@hooks/*": ["hooks/*"],
       "@layouts/*": ["layouts/*"],
-      "@pages/*": ["pages/*"]
+      "@pages/*": ["pages/*"],
+      "@context/*": ["context/*"],
     }
   },
   "include": ["src"]
