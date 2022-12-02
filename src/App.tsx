@@ -1,11 +1,11 @@
 import React from "react";
 
-import Main from "./pages/main";
+import TodoList from "./pages/todoList";
 
 function App() {
   return (
     <>
-      <Main />
+      <TodoList />
     </>
   );
 }
