@@ -28,14 +28,14 @@ export default function Form() {
           type="text"
           name="text"
           placeholder="Title..."
-          className="rounded-none w-full flex-grow bg-white h-full py-4 lg:py-0 w-full"
+          className="rounded-none w-full flex-grow bg-white h-full py-4 lg:py-0"
           isInvalid={isInvalid}
           value={todoVal}
           onChange={handleChange}
         />
         <AppButton
           type="submit"
-          className="h-full capitalize bg-slate-300 lg:px-16 py-4 lg:py-0"
+          className="h-full capitalize bg-slate-300 py-4 lg:py-0"
         >
           submit
         </AppButton>
