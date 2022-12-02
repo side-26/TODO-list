@@ -7,7 +7,7 @@ export default function AppButton({
 }: AppBtnPropsType) {
   return (
     <div className={className}>
-      <button {...props} className="w-full h-full">
+      <button {...props} className="w-full h-full lg:px-16">
         {children}
       </button>
     </div>
