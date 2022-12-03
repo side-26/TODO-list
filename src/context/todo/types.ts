@@ -1,14 +1,23 @@
+
+import { ID } from '@config/generalTypes';
 export type todoContextType = {
     todo: string,
-    isInvalid:boolean
-    setTodo: (todoName:string) => void,
-    deleteTodo: (id:number) => void,
-    deleteAllTodo: () => void
-    handleActiveTodo: (id:number) => void
-    todosArr: todoArrType[]
+    isInvalid: boolean
+    createTodo: (todoName: string) => void,
+    deleteTodo: (id: ID) => void,
+    deleteCompletedTodos: () => void
+    handleActiveTodo: (id: ID) => void,
+    showActiveTodos: () => void,
+    handleOnChange: (name: string) => void,
+    handleShowingAllTodos: () => void,
+    showAllTodosState: boolean
+    activeTodosArrLen: number,
+    isEmpty: boolean
+    todosArr: todoArrType[],
+    activeTodosArr: todoArrType[]
 }
-type todoArrType = {
-    id: number,
+export type todoArrType = {
+    id: ID,
     todoName: string,
     isChecked: boolean
 }
