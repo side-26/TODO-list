@@ -1,4 +1,3 @@
-
 import { AppBtnPropsType } from "./types";
 export default function AppButton({
   children,
@@ -6,8 +5,8 @@ export default function AppButton({
   ...props
 }: AppBtnPropsType) {
   return (
-    <div className={className}>
-      <button {...props} className="w-full h-full lg:px-16">
+    <div>
+      <button {...props} className={`w-full h-full ${className}`}>
         {children}
       </button>
     </div>
