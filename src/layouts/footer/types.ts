@@ -1,1 +1,3 @@
-export const types={}
+export type FooterPropsType = {
+    children: JSX.Element
+  }
