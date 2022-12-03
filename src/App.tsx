@@ -1,5 +1,5 @@
 import TodoList from "@pages/todoList";
-import FooterLayout from "@layouts/footer";
+import DefaultLayout from "@layouts/index";
 import { Context } from "@context/index";
 import { useTodoList } from "@hooks/useTodoList";
 function App() {
@@ -40,9 +40,9 @@ function App() {
       }}
     >
       <>
-        <FooterLayout>
+        <DefaultLayout>
           <TodoList />
-        </FooterLayout>
+        </DefaultLayout>
       </>
     </Context.Provider>
   );

@@ -1,8 +1,7 @@
 import AppButton from "@components/appButton";
 import { Context } from "@context/index";
 import { useContext } from "react";
-import { FooterPropsType } from "./types";
-export default function Footer({ children }: FooterPropsType) {
+export default function Footer() {
   const {
     isEmpty,
     activeTodosArrLen,
@@ -12,8 +11,7 @@ export default function Footer({ children }: FooterPropsType) {
     showActiveTodos,
   } = useContext(Context);
   return (
-    <div className="flex flex-col min-h-screen">
-      <div className="flex-grow">{children}</div>
+    <>
       <footer className="py-2 lg:px-10 2xl:px-[10%] bg-red-400 bg-opacity-95">
         <div className="flex justify-between flex-wrap items-center">
           {isEmpty ? (
@@ -31,7 +29,7 @@ export default function Footer({ children }: FooterPropsType) {
             </AppButton>
             <AppButton
               className={`mx-2 ${!showAllTodosState && "font-bold"}`}
-              onClick={ showActiveTodos}
+              onClick={showActiveTodos}
             >
               active
             </AppButton>
@@ -46,6 +44,6 @@ export default function Footer({ children }: FooterPropsType) {
           </div>
         </div>
       </footer>
-    </div>
+    </>
   );
 }
