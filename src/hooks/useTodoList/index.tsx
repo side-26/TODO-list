@@ -1,26 +1,27 @@
 import { useState, useEffect } from "react";
-import { ID } from "@config/generalTypes";
+import { ID, todoItemType } from "@config/generalTypes";
 export const useTodoList = () => {
   const [todo, setTodo] = useState("");
-  const [id, setId] = useState("");
-  const [activeTodosArr, setActiveTodos] = useState<
-    { id: ID; todoName: string; isChecked: boolean }[]
-  >([]);
-
-  const [todosArr, setTodosArr] = useState<
-    { id: ID; todoName: string; isChecked: boolean }[]
-  >([]);
+  const [activeTodosArr, setActiveTodos] = useState<todoItemType[]>([]);
+  const [todosArr, setTodosArr] = useState<todoItemType[]>([]);
+  const [isEmpty, setIsEmpty] = useState(true);
+  const activeTodosArrLen = activeTodosArr.length;
+  const [showAllTodosState, setshowAllTodosState] = useState(true);
   useEffect(() => {
     setActiveTodos([...todosArr].filter((todo) => !todo.isChecked));
-  }, [todosArr]);
-  const [showAllTodosState, setshowAllTodosState] = useState(true);
-  const activeTodosArrLen = activeTodosArr.length
-  const isEmpty = !activeTodosArrLen ? true : false;
+    setIsEmpty(() =>
+      (showAllTodosState && !todosArr.length) ||
+      (!showAllTodosState && !activeTodosArrLen)
+        ? true
+        : false
+    );
+  }, [todosArr, activeTodosArrLen, showAllTodosState]);
+
   const [isInvalid, setIsInvalid] = useState(false);
   const setCreateTodo = (todoName: string): void => {
     if (!todoName.trim().length) setIsInvalid(true);
     else {
-      setId(id + 1);
+      setIsInvalid(false)
       const todoObj = {
         id: Date.now(),
         todoName: todo,
@@ -52,12 +53,9 @@ export const useTodoList = () => {
   };
   const setShowCompletedTodos = () => {
     setshowAllTodosState(false);
-    console.log(todosArr);
   };
   const setShowAllTodos = () => {
     setshowAllTodosState(true);
-    // alert("fuck u");
-    console.log(todosArr);
   };
   return {
     todo,
