@@ -9,7 +9,7 @@ export default function AppInput({
     <div className=" mb-6 lg:mb-0 w-full">
       <div
         className={`flex flex-col my-2 pl-1 lg:my-0  ${className} ${
-          isInvalid ? "animate-shake border-2 border-red-500" : ""
+          isInvalid ? "animate-shake border-2 border-red-600" : ""
         }`}
       >
         <input
@@ -19,7 +19,7 @@ export default function AppInput({
         />
       </div>
       {isInvalid && (
-        <div className={`text-red-500 font-bold text-xs`}>
+        <div className={`text-red-600 font-bold text-xs`}>
           please fill the input!!!
         </div>
       )}
