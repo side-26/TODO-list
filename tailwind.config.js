@@ -21,6 +21,11 @@ module.exports = {
       animation: {
         shake: "shake ease 1s",
       },
+      colors: {
+        primary: "#8c7d76",
+        secondary: "#e3e3e3",
+        footer_bg: "#bbb",
+      },
     },
   },
   plugins: [],

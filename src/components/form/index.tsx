@@ -29,7 +29,7 @@ export default function Form() {
         />
         <AppButton
           type="submit"
-          className="h-full capitalize bg-slate-300 py-4 lg:py-0 lg:px-16"
+          className="h-full capitalize text-primary text-xl bg-slate-300 py-4 lg:py-0 lg:px-16"
         >
           submit
         </AppButton>

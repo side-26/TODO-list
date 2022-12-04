@@ -12,13 +12,9 @@ export default function Footer() {
   } = useContext(Context);
   return (
     <>
-      <footer className="py-2 lg:px-10 2xl:px-[10%] bg-red-400 bg-opacity-95">
+      <footer className="py-2 lg:px-10 2xl:px-[10%] bg-footer_bg bg-opacity-95">
         <div className="flex justify-between flex-wrap items-center">
-          {isEmpty ? (
-            <div>no item found!!</div>
-          ) : (
-            <div>{activeTodosArrLen} item left</div>
-          )}
+          <div>{activeTodosArrLen} item left</div>
 
           <div className="flex capitalize">
             <AppButton

@@ -10,8 +10,8 @@ export default function TodoItem({
 }: todoItemType) {
   return (
     <div
-      className={`py-3 px-3 lg:px-10 xl:px-14 flex justify-between items-center border-b-2 border-gray-300 ${
-        isChecked && "bg-gray-300"
+      className={`py-3 px-3 lg:px-10 xl:px-14 flex justify-between items-center border-b-2 border-gray-300 transition-all ${
+        isChecked && "bg-secondary"
       }`}
     >
       <div className="px-2">
@@ -24,8 +24,8 @@ export default function TodoItem({
         />
         <label
           htmlFor={`${id}`}
-          className={`ml-1 cursor-pointer text-lg  w-[10rem] overflow-hidden text-ellipsis ${
-            isChecked && "line-through"
+          className={`ml-2 cursor-pointer text-lg  md:w-[10rem] w-[90%] transition-all ${
+            isChecked && "line-through text-white"
           }`}
         >
           {todoName}
