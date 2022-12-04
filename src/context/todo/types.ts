@@ -1,5 +1,5 @@
 
-import { ID } from '@config/generalTypes';
+import { ID, todoItemType } from '@config/generalTypes';
 export type todoContextType = {
     todo: string,
     isInvalid: boolean
@@ -13,11 +13,6 @@ export type todoContextType = {
     showAllTodosState: boolean
     activeTodosArrLen: number,
     isEmpty: boolean
-    todosArr: todoArrType[],
-    activeTodosArr: todoArrType[]
-}
-export type todoArrType = {
-    id: ID,
-    todoName: string,
-    isChecked: boolean
+    todosArr: todoItemType[],
+    activeTodosArr: todoItemType[]
 }
